@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server.Dockerfile
+    depends_on:
+      - mysql
+      - redis
+    ports:
+      - "8080:8080"
+
+volumes:
+  dbstorage:
